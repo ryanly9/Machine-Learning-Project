@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <title>Wellness Works</title>
+  <link rel="icon" href="logo.png" type="image/x-icon" />
+  <!-- My css -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/mycss.css') }}">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+  
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/scrolling-nav.css') }}">
+  
+  <style>
+    #myfirst{
+      
+    background-image: url('{{ url_for('static', filename='images/bgimg.png') }}'); !important
+    background-size: cover; /* Cover the entire viewport */ !important
+    background-position: center; /* Center the image */ !important
+    background-repeat: no-repeat; !important
+    color:white;
+    text-align:centre;
+    padding 100px 0;
+    
+    }
+    .social{
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+th,td {
+    border: 0.5px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+nav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    float: left;
+}
+
+.nav-list li a, .dropbtn {
+    display: inline-block;
+    color: rgb(83, 78, 78);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-list li a:hover, .dropdown:hover .dropbtn {
+    background-color: rgba(186, 189, 197, 0.744);
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+  </style>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" >
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">WELLNESS WORKS</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link js-scroll-trigger" href="{{ url_for('index') }}">Home </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link js-scroll-trigger" href="#about">About </a>
+          </li>
+          <li class="dropdown">
+            <a href="#working" class="dropbtn">Working</a>
+            <div class="dropdown-content">
+                <a href="#link1">Link 1</a>
+                <a href="#link2">Link 2</a>
+                <a href="#link3">Link 3</a>
+            </div>
+        </li>
+          
+
+          <li class="nav-item active">
+            <a class="nav-link js-scroll-trigger" href="{{ url_for('show')}}" >Working </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link js-scroll-trigger" href="{{ url_for('measure')}}">Measure Obesity </a>
+          </li>
+          <!-- <li class="nav-item active">
+            <a class="nav-link js-scroll-trigger" href="login.php">User</a>
+          </li> -->
+
+
+        </ul>
+      </div>
+    </div>
+  </nav> <br> <br> <br>
+
+  <div class="container">
+    <h1 class="my-4">Preprocessing Steps</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">Dataset</div>
+        <div class="card-body">
+            <img src="{{ url_for('static', filename='images/head.png') }}" class="img-fluid" alt="Pair Plot"
+                style="max-width: 90%; height: auto;">
+        </div>
+    </div>
+
+
+    <div class="card mb-4">
+        <div class="card-header">Info of data</div>
+        <div class="card-body">
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Column</th>
+                    <th>Non-Null Count</th>
+                    <th>Data type </th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>Age</td>
+                    <td>1000</td>
+                    <td>int64</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Gender</td>
+                    <td>1000</td>
+                    <td>object</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Height</td>
+                    <td>982</td>
+                    <td>float64</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Weight</td>
+                    <td>1000</td>
+                    <td>float64</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>BMI</td>
+                    <td>985</td>
+                    <td>float64</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>ObesityCategory</td>
+                    <td>1000</td>
+                    <td>object</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Pair plot of Data</div>
+        <div class="card-body">
+            <img src="{{ url_for('static', filename='images/pair_plot.png') }}" class="img-fluid"
+                alt="Data Description">
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Checking for Empty(null) values</div>
+        <div class="card-body">
+            <table>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Height</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td>Weight</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>BMI</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>ObesityCategory</td>
+                    <td>0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+    <div class="card mb-4">
+        <div class="card-header">Data Description</div>
+        <div class="card-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Age</th>
+                        <th>Height</th>
+                        <th>Weight</th>
+                        <th>BMI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>count</td>
+                        <td>1000.000000</td>
+                        <td>1000.000000</td>
+                        <td>1000.000000</td>
+                        <td>985.000000</td>
+                    </tr>
+                    <tr>
+                        <td>mean</td>
+                        <td>49.857000</td>
+                        <td>170.074239</td>
+                        <td>71.205769</td>
+                        <td>24.848191</td>
+                    </tr>
+                    <tr>
+                        <td>std</td>
+                        <td>18.114267</td>
+                        <td>10.253100</td>
+                        <td>15.509849</td>
+                        <td>6.134746</td>
+                    </tr>
+                    <tr>
+                        <td>min</td>
+                        <td>18.000000</td>
+                        <td>136.115719</td>
+                        <td>26.065730</td>
+                        <td>8.470572</td>
+                    </tr>
+                    <tr>
+                        <td>25%</td>
+                        <td>35.000000</td>
+                        <td>163.709242</td>
+                        <td>61.129629</td>
+                        <td>20.890857</td>
+                    </tr>
+                    <tr>
+                        <td>50%</td>
+                        <td>50.000000</td>
+                        <td>170.074239</td>
+                        <td>71.929072</td>
+                        <td>24.693341</td>
+                    </tr>
+                    <tr>
+                        <td>75%</td>
+                        <td>66.000000</td>
+                        <td>177.302433</td>
+                        <td>81.133746</td>
+                        <td>28.708889</td>
+                    </tr>
+                    <tr>
+                        <td>max</td>
+                        <td>79.000000</td>
+                        <td>201.419670</td>
+                        <td>118.907366</td>
+                        <td>50.791898</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Data Description</div>
+        <div class="card-body">
+            <img src="{{ url_for('static', filename='images/describe.png') }}" class="img-fluid"
+                alt="Data Description">
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Target Value Graph</div>
+        <div class="card-body">
+            <img src="{{ url_for('static', filename='images/target_category.png') }}" class="img-fluid"
+                alt="Data Description">
+        </div>
+    </div>
+    <div class="card mb-4">
+        <div class="card-header">Ordinal Encoding : Assigning Number/div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Code</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Underweight</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Normal weight</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Overweight</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Obese</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> 
+
+
+        <div class="card mb-4">
+            <div class="card-header">Height Graph</div>
+            <div class="card-body">
+                <img src="{{ url_for('static', filename='images/height_distribution.png') }}" class="img-fluid"
+                    alt="Data Description">
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">Handling Null Values</div>
+            <div class="card-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Height</td>
+                            <td>Imputation(mean)</td>
+                        </tr>
+                        <tr>
+                            <td>BMI</td>
+                            <td>Using Weight and Height</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+    <div class="card mb-4">
+        <div class="card-header">Label Encoding : Gender Cloumn</div>
+        <div class="card-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Male</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>female</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Correlation Matrix</div>
+        <div class="card-body">
+            <img src="{{ url_for('static', filename='images/CORR.png') }}" class="img-fluid" alt="Data Description">
+        </div>
+    </div>
+     <div class="card mb-4">
+            <div class="card-header">BOX PLOT : Age</div>
+            <div class="card-body">
+                <img src="{{ url_for('static', filename='images/Age_boxplot.png') }}" class="img-fluid"
+                alt="Data Description">
+            </div>
+    </div>
+    <div class="card mb-4">
+                <div class="card-header">BOX PLOT : Gender</div>
+                <div class="card-body">
+                    <img src="{{ url_for('static', filename='images/Gender_boxplot.png') }}" class="img-fluid"
+                        alt="Data Description">
+                </div>
+    </div>
+                <div class="card mb-4">
+                    <div class="card-header">BOX PLOT : BMi</div>
+                    <div class="card-body">
+                        <img src="{{ url_for('static', filename='images/BMI_boxplot.png') }}" class="img-fluid"
+                            alt="Data Description">
+                    </div>
+                </div>   
+                    <div class="card mb-4">
+                        <div class="card-header">BOX PLOT : Height</div>
+                        <div class="card-body">
+                            <img src="{{ url_for('static', filename='images/Height_boxplot.png') }}"
+                                class="img-fluid" alt="Data Description">
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                            <div class="card-header">Handling Outliers : technique </div>
+                            <div class="card-body">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Category</th>
+                                            <th>Method</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Height</td>
+                                            <td>Trimming</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Weight</td>
+                                            <td>Trimming</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BMI</td>
+                                            <td>Trimming</td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-header">Handling Outliers: Before and After</div>
+                            <div class="card-body">
+                                <img src="{{ url_for('static', filename='images/weight_trimmed_boxplot.png') }}"
+                                    class="img-fluid" alt="Data Description">
+                            </div>
+                        </div>    
+                        <div class="card mb-4">
+                            <div class="card-header">Handling Outliers: BMI</div>
+                            <div class="card-body">
+                                <img src="{{ url_for('static', filename='images/BMI_boxplot_beforeafter.png') }}"
+                                    class="img-fluid" alt="Data Description">
+                            </div>
+                        </div>       
+</div>
+
+
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <h6 class="m-0 text-center text-white">--Obesity Prediction--</h6>
+    </div>
+    <div class="social">
+      <h6>Contact:</h6>
+                <a href="#">Phone: 96486xxxx</a> <br>
+                <a href="#">Email: WellnesWorks@xyz.com </a><br>
+                <a href="#">Address: Integral University , Lucknow </a> <br>
+            </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="{{ url_for('static', filename='js/scrolling-nav.js') }}"></script>
+  <script src="js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
