@@ -7,10 +7,15 @@ Data Analysis: Comprehensive analysis of factors such as age, height, weight, di
 Personalized Recommendations: Tailored suggestions to help users manage their weight effectively.
 Visualization: Engaging visualizations of data trends and predictions for better understanding.
 # Technologies Used
-Frontend: HTML, CSS, JavaScript, 
+Frontend: HTML, CSS, JavaScript
+
 Backend: Python, Flask
-Machine Learning: Scikit-learn, Pandas, NumPy
+
+Machine Learning: Scikit-learn, Pandas, NumPy,
+
 Database: Python file Management
+
+Algorithm used: DecisionTreeClassifier.
 # Getting Started
 To get started, clone the repository and follow the installation instructions in the README.md. Input your data to receive an obesity risk prediction along with personalized health insights.
 
